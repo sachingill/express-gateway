@@ -15,14 +15,13 @@ serviceEndpoints:
 policies:
   - proxy
   - key-auth
+  - oauth2
 pipelines:
   - name: adminAPI
     apiEndpoints:
       - api
     policies:
-      - key-auth:
-          -
-            action:
+      - oauth2:
       - proxy:
           - action:
               serviceEndpoint: backend

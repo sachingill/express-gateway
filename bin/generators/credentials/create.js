@@ -93,7 +93,8 @@ module.exports = class extends eg.Generator {
       this._output(newCredential);
     })
     .catch(err => {
-      this.log.error((err.response && err.response.error && err.response.error.text) || err.message);
+      console.log(err.response);
+      this.log.error(err.response.body.message);
     });
   };
 
